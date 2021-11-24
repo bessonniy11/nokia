@@ -1,0 +1,154 @@
+/* min null-styles */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+	display: block;
+}
+html {
+	font-size: 16px;
+}
+html,
+body {
+	height: 100%;
+	min-width: 320px;
+}
+body.lock {
+    overflow: hidden;
+}
+
+input,
+button,
+textarea {
+	/* font-family: $fontFamily; */
+	font-size: inherit;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+	background-color: inherit;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+@font-face {
+	font-family: 'Noto Sans';
+	src: url('../fonts/NotoSansRegular.woff2') format('woff2');
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Noto Sans';
+	src: url('../fonts/NotoSansSemiBold.woff2') format('woff2');
+	font-display: swap;
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/RobotoMedium.woff2') format('woff2');
+	font-display: swap;
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/RobotoBold.woff2') format('woff2');
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
+:root {
+	--color-dark: #4d4d4d;
+	--color-light: #808080;
+	--color-accent: #5d71dd;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	margin: 0;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	overflow-anchor: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.btn {
+	border: none;
+	padding: 14px 0;
+	border-radius: 4px;
+	width: 100%;
+	color: #fff;
+	background-color: var(--color-accent);
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: #6078f1;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.btn:disabled {
+	opacity: 0.4;
+	pointer-events: none;
+}
