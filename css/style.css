@@ -75,6 +75,7 @@
 
 .cart__text {
 	position: relative;
+	cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +87,10 @@
 .cart__text:hover {
 	border: 2px solid #fff;
 }
-
+.simplebar-placeholder {
+	display: none;
+	height: 0;
+}
 .cart__quantity {
 	position: absolute;
 	right: -10px;

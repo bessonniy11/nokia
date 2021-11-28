@@ -4,18 +4,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>shop card</title>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Нокиа</title>
+	<link rel="shortcut icon" href="img/icon.png">
 	<link rel="stylesheet" href="css/global.css">
 	<link rel="stylesheet" href="css/popup.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/ui.css">
-	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="libs/modal/modal.css">
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<link rel="stylesheet" href="css/cart.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<div class="wrapper">
 		<div class="page">
+			<div class="test">
+				ZZZ
+			</div>
 			<header class="header lock-padding">
 				<div class="_container">
 					<div class="menu__icon icon-menu">
@@ -25,26 +32,40 @@
 					</div>
 					<nav class="header__nav nav">
 						<ul class="nav__list">
-							<li class="nav__item"><a href="#catalog" class="nav__link _goto">Каталог</a></li>
+							<li class="nav__item"><a href="#header" class="nav__link _goto">Главная</a></li>
 							<li class="nav__item"><a href="#about" class="nav__link _goto">О нас</a></li>
+							<li class="nav__item"><a href="#catalog" class="nav__link _goto">Каталог</a></li>
 							<li class="nav__item"><a href="#payment-and-delivery" class="nav__link _goto">Оплата и
 									доставка</a></li>
 							<li class="nav__item"><a href="#contacts" class="nav__link _goto">Контакты</a></li>
 						</ul>
-						<a href="#cart" class="header__cart cart popup-link" tabindex="0">
+						<div class="header__cart cart" tabindex="0">
 							<div class="cart__text">
 								Корзина
 								<!-- <img src="img/cart.png" alt=""> -->
 								<span class="cart__quantity">0</span>
 							</div>
-						</a>
+							<div class="cart-content">
+								<ul class="cart-content__list" data-simplebar>
+								</ul>
+								<div class="cart-content__bottom">
+									<div class="cart-content__fullprice">
+										<span>Итого:</span>
+										<span class="fullprice">568 789 ₽</span>
+									</div>
+									<button class="cart-content__btn" data-graph-path="modal"
+										data-graph-animation="fadeInUp">Перейти в
+										корзину</button>
+								</div>
+							</div>
+						</div>
 					</nav>
 				</div>
 			</header>
 			<div class="main">
 				<div class="main__container _container">
 					<div class="main__title">
-						Lorem ipsum dolor sit.
+						Lorem ipsum dolor sit-1
 					</div>
 					<div class="main__text">
 						Lorem ipsum dolor sit, amet
@@ -71,9 +92,9 @@
 						<div class="slider-photo__items _swiper">
 							<div class="slider-photo__item _ibg"><img src="img/nokia-1.jpg" alt=""></div>
 							<div class="slider-photo__item _ibg"><img src="img/nokia-2.jpg" alt=""></div>
-							<div class="slider-photo__item _ibg"><img src="img/nokia-1.jpg" alt=""></div>
-							<div class="slider-photo__item _ibg"><img src="img/nokia-2.jpg" alt=""></div>
-							<div class="slider-photo__item _ibg"><img src="img/nokia-1.jpg" alt=""></div>
+							<div class="slider-photo__item _ibg"><img src="img/nokia-3.jpg" alt=""></div>
+							<div class="slider-photo__item _ibg"><img src="img/nokia-4.jpg" alt=""></div>
+							<div class="slider-photo__item _ibg"><img src="img/nokia-5.jpg" alt=""></div>
 						</div>
 					</div>
 				</div>
@@ -84,7 +105,7 @@
 						Lorem ipsum dolor sit.
 					</div>
 					<div class="catalog__items product-item">
-						<div class="product-item__body">
+						<div class="product-item__body product">
 							<div class="product-item__img-wrapper">
 								<div class="product-item__img _swiper">
 									<div class="product-item__img-item _ibg"><img src="img/nokia-1.jpg" alt=""></div>
@@ -93,8 +114,8 @@
 								</div>
 							</div>
 							<div class="product-item__desc product-desc">
-								<div class="product-desc__title">
-									Lorem ipsum dolor sit amet.
+								<div class="product-desc__title product__title">
+									<a href="#">Nokia 8800 (чёрный)</a>
 								</div>
 								<div class="product-desc__prices">
 									<div class="product-desc__oldprice">
@@ -105,11 +126,11 @@
 									</div>
 								</div>
 							</div>
-							<div class="product-desc__btn">
+							<div class="product-desc__btn product__btn">
 								В корзину
 							</div>
 						</div>
-						<div class="product-item__body">
+						<div class="product-item__body product">
 							<div class="product-item__img-wrapper">
 								<div class="product-item__img _swiper">
 									<div class="product-item__img-item _ibg"><img src="img/nokia-2.jpg" alt=""></div>
@@ -118,8 +139,8 @@
 								</div>
 							</div>
 							<div class="product-item__desc product-desc">
-								<div class="product-desc__title">
-									Lorem ipsum dolor sit amet.
+								<div class="product-desc__title product__title">
+									<a href="#">Nokia 8800 (белый)</a>
 								</div>
 								<div class="product-desc__prices">
 									<div class="product-desc__oldprice">
@@ -130,7 +151,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="product-desc__btn">
+							<div class="product-desc__btn product__btn">
 								В корзину
 							</div>
 						</div>
@@ -175,24 +196,69 @@
 			</footer>
 		</div>
 
+		<div class="modal">
+			<div class="modal__container order-modal" role="dialog" aria-modal="true" data-graph-target="modal">
+				<div class="modal-content order-modal__content">
+					<div class="order-modal__top">
+						<h2 class="order-modal__title">Оформление заказа</h2>
+						<span class="order-modal__number">Заказ № 3456 67</span>
+					</div>
+					<div class="order-modal__info">
+						<div class="order-modal__quantity order-modal__info-item">Товаров в заказе: <span>3 шт</span>
+						</div>
+						<div class="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>568 789 ₽</span>
+						</div>
+						<div class="order-modal__products order-modal__info-item">
+						</div>
+					</div>
+					<div class="contacts__body-question body-question">
+						<form action="sendform.php" method="post" class="body-form form order">
+							<input name="phone" type="phone" placeholder="Ваш телефон" required class="form-phone">
+							<input name="name" type="name" placeholder="Ваше имя" required class="form-name">
+							<!-- <input name="model" type="text" placeholder="Ваше имя" required class="model"> -->
+							<button type="submit" class="form__btn">Оформить заказ</button>
+						</form>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
 
 
-
-		<div id="cart" class="popup">
+		<!-- <div id="cart" class="popup">
 			<div class="popup__body">
 				<div class="popup__content">
 					<a href="#header" class="popup__close close-popup">X</a>
 					Где Ваша адекватность? Вы разве не видите, что корзина пустая?
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
-	<!-- <script src="js/inputmask.min.js"></script> -->
+	<script>
+		let num = 0
+		function changeTitle(num) {
+
+			document.querySelector(".main__title").textContent = `Lorem ipsum dolor sit-${num}`;
+			if (num < 4) {
+				setTimeout(changeTitle, 1000, ++num)
+			} else {
+				num = 0;
+				setTimeout(changeTitle, 1000, ++num)
+			}
+		}
+		setTimeout(changeTitle, 1000, 1)
+
+
+	</script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/inputmask.min.js"></script>
+	<script src="js/simplebar.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script src="js/sliders.js"></script>
 	<script src="js/popup.js"></script>
-	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="libs/modal/modal.js"></script>
 	<script src="js/just-validate.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
